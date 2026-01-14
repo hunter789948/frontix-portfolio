@@ -2,7 +2,10 @@ import { motion } from "framer-motion";
 
 export default function CTA() {
   return (
-    <section className="bg-black px-6 py-32">
+    <section
+      id="cta"
+      className="bg-black px-6 py-32 scroll-mt-32"
+    >
       <div className="max-w-6xl mx-auto text-center">
 
         <motion.h2
@@ -26,7 +29,7 @@ export default function CTA() {
         </motion.p>
 
         <motion.a
-          href="#contact"
+          href="/contact"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ delay: 0.4, duration: 0.6 }}

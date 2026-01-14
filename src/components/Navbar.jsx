@@ -20,8 +20,6 @@ export default function Navbar() {
       className="relative group text-base font-medium tracking-wide text-gray-300 hover:text-white transition"
     >
       {children}
-
-      {/* Underline only on hover */}
       <span className="absolute left-0 -bottom-1 h-[2px] w-full bg-[#00C4C8] scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100" />
     </a>
   );
@@ -40,10 +38,10 @@ export default function Navbar() {
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between font-nav">
-          
+
           {/* Logo */}
           <a
-            href="#top"
+            href="/"
             className="text-2xl md:text-3xl font-bold tracking-tight text-white"
           >
             Front<span className="text-[#00C4C8]">IX</span>
@@ -51,12 +49,12 @@ export default function Navbar() {
 
           {/* Desktop Links */}
           <div className="hidden md:flex items-center gap-10">
-            <NavLink href="#services">Services</NavLink>
-            <NavLink href="#work">About</NavLink>
+            <NavLink href="/#services">Services</NavLink>
+            <NavLink href="/#work">About</NavLink>
 
-            {/* Contact button */}
+            {/* Contact button → CTA */}
             <a
-              href="#contact"
+              href="/#cta"
               className="ml-4 px-6 py-2.5 rounded-xl bg-[#00C4C8] text-black font-semibold text-base hover:opacity-90 transition"
             >
               Contact
@@ -94,7 +92,7 @@ export default function Navbar() {
             className="fixed inset-0 z-40 bg-black flex flex-col items-center justify-center gap-10 text-4xl font-nav"
           >
             <a
-              href="#services"
+              href="/#services"
               onClick={() => setOpen(false)}
               className="text-white hover:text-[#00C4C8]"
             >
@@ -102,7 +100,7 @@ export default function Navbar() {
             </a>
 
             <a
-              href="#work"
+              href="/#work"
               onClick={() => setOpen(false)}
               className="text-white hover:text-[#00C4C8]"
             >
@@ -110,7 +108,7 @@ export default function Navbar() {
             </a>
 
             <a
-              href="#contact"
+              href="/#cta"
               onClick={() => setOpen(false)}
               className="text-[#00C4C8] font-semibold"
             >

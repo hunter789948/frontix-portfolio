@@ -6,17 +6,17 @@ const containerVariants = {
   hidden: {},
   show: {
     transition: {
-      staggerChildren: 0.15,
+      staggerChildren: 0.12,
     },
   },
 };
 
 const reveal = {
-  hidden: { opacity: 0, y: 40 },
+  hidden: { opacity: 0, y: 30 },
   show: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.8, ease: "easeOut" },
+    transition: { duration: 0.7, ease: "easeOut" },
   },
 };
 
@@ -28,13 +28,13 @@ export default function Contact() {
     e.preventDefault();
     setStatus("sending");
 
-    emailjs.sendForm(
-  import.meta.env.VITE_EMAILJS_SERVICE,
-  import.meta.env.VITE_EMAILJS_TEMPLATE,
-  formRef.current,
-  import.meta.env.VITE_EMAILJS_PUBLIC
-)
-
+    emailjs
+      .sendForm(
+        import.meta.env.VITE_EMAILJS_SERVICE,
+        import.meta.env.VITE_EMAILJS_TEMPLATE,
+        formRef.current,
+        import.meta.env.VITE_EMAILJS_PUBLIC
+      )
       .then(
         () => {
           setStatus("success");
@@ -49,30 +49,30 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="relative py-32 px-6 bg-black overflow-hidden"
+      className="relative pt-24 pb-10 px-6 bg-black overflow-hidden scroll-mt-28"
     >
-      {/* Soft ambient background */}
+      {/* Ambient glow */}
       <div className="pointer-events-none absolute inset-0">
-        <div className="absolute top-40 left-1/2 -translate-x-1/2 w-[900px] h-[900px] rounded-full bg-[#00C4C8]/10 blur-[200px]" />
+        <div className="absolute top-40 left-1/2 -translate-x-1/2 w-[700px] h-[700px] rounded-full bg-[#00C4C8]/10 blur-[160px]" />
       </div>
 
       <motion.div
         variants={containerVariants}
         initial="hidden"
         whileInView="show"
-        viewport={{ once: true, margin: "-120px" }}
-        className="relative z-10 max-w-6xl mx-auto grid md:grid-cols-2 gap-20 items-start"
+        viewport={{ once: true, margin: "-80px" }}
+        className="relative z-10 max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-start"
       >
         {/* LEFT CONTENT */}
         <motion.div variants={reveal}>
-          <h2 className="text-4xl md:text-5xl font-serif text-white leading-tight mb-6">
+          <h2 className="text-4xl md:text-5xl font-serif text-white leading-tight mb-5">
             Let’s build something{" "}
             <span className="text-[#00C4C8]">premium</span>
           </h2>
 
           <p className="text-white/60 max-w-md leading-relaxed mb-8">
-            Have a project in mind? Share the details and I’ll personally reach out
-            to discuss how we can craft something fast, cinematic, and scalable.
+            Have a project in mind? Share the details and I’ll personally reach
+            out to craft something fast, cinematic, and scalable.
           </p>
 
           <div className="text-sm text-white/40 space-y-2">
@@ -98,13 +98,9 @@ export default function Contact() {
         {/* FORM CARD */}
         <motion.div
           variants={reveal}
-          className="bg-white/[0.02] border border-white/10 rounded-3xl p-10 backdrop-blur-sm"
+          className="bg-white/[0.03] border border-white/10 rounded-3xl p-8 md:p-10 backdrop-blur-md shadow-[0_0_0_1px_rgba(255,255,255,0.03)]"
         >
-          <form
-            ref={formRef}
-            onSubmit={sendEmail}
-            className="space-y-6"
-          >
+          <form ref={formRef} onSubmit={sendEmail} className="space-y-5">
             <input
               type="text"
               name="name"
@@ -130,7 +126,7 @@ export default function Contact() {
             />
 
             <textarea
-              rows="5"
+              rows="4"
               name="message"
               placeholder="Tell me about your project"
               required
@@ -139,10 +135,10 @@ export default function Contact() {
 
             <motion.button
               whileHover={{ y: -1 }}
-              whileTap={{ scale: 0.98 }}
-              transition={{ duration: 0.2 }}
+              whileTap={{ scale: 0.97 }}
+              transition={{ duration: 0.15 }}
               type="submit"
-              className="w-full mt-4 py-4 rounded-full border border-white/20 text-white hover:border-white/40 transition"
+              className="w-full mt-2 py-4 rounded-full bg-[#00C4C8] text-black font-medium hover:opacity-90 transition"
             >
               {status === "sending"
                 ? "Sending..."
@@ -155,9 +151,6 @@ export default function Contact() {
           </form>
         </motion.div>
       </motion.div>
-
-      {/* Top fade */}
-      <div className="pointer-events-none absolute top-0 left-0 w-full h-40 bg-gradient-to-t from-transparent to-black" />
     </section>
   );
 }

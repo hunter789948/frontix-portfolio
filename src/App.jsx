@@ -1,21 +1,42 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+
 import Hero from "./sections/Hero";
 import Services from "./components/Services";
 import CaseStudies from "./sections/CaseStudies";
 import CTA from "./sections/CTA";
-import Contact from "./sections/Contact";
-import Footer from "./components/Footer";
+
+import ContactPage from "./pages/ContactPage";
 
 export default function App() {
   return (
-    <div className="bg-black text-white">
-      <Navbar />
-      <Hero />
-      <Services />
-      <CaseStudies />
-      <CTA />
-      <Contact />
-      <Footer />
-    </div>
+    <BrowserRouter>
+      <div className="bg-black text-white">
+        <Navbar />
+
+        <Routes>
+          {/* Home page */}
+          <Route
+            path="/"
+            element={
+              <>
+                <Hero />
+                <Services />
+                <CaseStudies />
+                <CTA />
+              </>
+            }
+          />
+
+          {/* Contact page */}
+          <Route path="/contact" element={<ContactPage />} />
+        </Routes>
+
+        {/* Footer always visible */}
+        <Footer />
+      </div>
+    </BrowserRouter>
   );
 }
