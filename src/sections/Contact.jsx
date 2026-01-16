@@ -49,11 +49,11 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="relative pt-24 pb-10 px-6 bg-black overflow-hidden scroll-mt-28"
+      className="relative min-h-screen flex items-center px-6 bg-black overflow-hidden scroll-mt-28"
     >
-      {/* Ambient glow */}
+      {/* Ambient cinematic glow */}
       <div className="pointer-events-none absolute inset-0">
-        <div className="absolute top-40 left-1/2 -translate-x-1/2 w-[700px] h-[700px] rounded-full bg-[#00C4C8]/10 blur-[160px]" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[900px] rounded-full bg-[#00C4C8]/10 blur-[200px]" />
       </div>
 
       <motion.div
@@ -61,16 +61,16 @@ export default function Contact() {
         initial="hidden"
         whileInView="show"
         viewport={{ once: true, margin: "-80px" }}
-        className="relative z-10 max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-start"
+        className="relative z-10 w-full max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center"
       >
         {/* LEFT CONTENT */}
         <motion.div variants={reveal}>
-          <h2 className="text-4xl md:text-5xl font-serif text-white leading-tight mb-5">
+          <h2 className="text-4xl md:text-5xl font-serif text-white leading-tight mb-6">
             Let’s build something{" "}
             <span className="text-[#00C4C8]">premium</span>
           </h2>
 
-          <p className="text-white/60 max-w-md leading-relaxed mb-8">
+          <p className="text-white/60 max-w-md leading-relaxed mb-10">
             Have a project in mind? Share the details and I’ll personally reach
             out to craft something fast, cinematic, and scalable.
           </p>
@@ -81,7 +81,7 @@ export default function Contact() {
             </p>
             <p>Frontend Developer · Available for projects</p>
 
-            <div className="pt-3 space-y-1">
+            <div className="pt-4 space-y-1">
               <p>
                 <span className="text-white/30">Email:</span>{" "}
                 <a
@@ -98,15 +98,22 @@ export default function Contact() {
         {/* FORM CARD */}
         <motion.div
           variants={reveal}
-          className="bg-white/[0.03] border border-white/10 rounded-3xl p-8 md:p-10 backdrop-blur-md shadow-[0_0_0_1px_rgba(255,255,255,0.03)]"
+          className="relative bg-white/[0.035] border border-white/10 rounded-3xl p-10 md:p-12 backdrop-blur-xl shadow-[0_0_80px_rgba(0,196,200,0.08)] min-h-[540px] flex flex-col justify-center"
         >
-          <form ref={formRef} onSubmit={sendEmail} className="space-y-5">
+          {/* subtle inner lighting */}
+          <div className="pointer-events-none absolute inset-0 rounded-3xl bg-gradient-to-b from-white/[0.05] to-transparent" />
+
+          <form
+            ref={formRef}
+            onSubmit={sendEmail}
+            className="relative space-y-6"
+          >
             <input
               type="text"
               name="name"
               placeholder="Your name"
               required
-              className="w-full bg-black border border-white/10 rounded-xl px-5 py-4 text-sm text-white placeholder-white/30 focus:outline-none focus:border-white/30 transition"
+              className="w-full bg-black/60 border border-white/10 rounded-xl px-5 py-4 text-sm text-white placeholder-white/30 focus:outline-none focus:border-[#00C4C8]/40 transition"
             />
 
             <input
@@ -114,7 +121,7 @@ export default function Contact() {
               name="email"
               placeholder="Your email"
               required
-              className="w-full bg-black border border-white/10 rounded-xl px-5 py-4 text-sm text-white placeholder-white/30 focus:outline-none focus:border-white/30 transition"
+              className="w-full bg-black/60 border border-white/10 rounded-xl px-5 py-4 text-sm text-white placeholder-white/30 focus:outline-none focus:border-[#00C4C8]/40 transition"
             />
 
             <input
@@ -122,15 +129,15 @@ export default function Contact() {
               name="phone"
               placeholder="Your contact number"
               required
-              className="w-full bg-black border border-white/10 rounded-xl px-5 py-4 text-sm text-white placeholder-white/30 focus:outline-none focus:border-white/30 transition"
+              className="w-full bg-black/60 border border-white/10 rounded-xl px-5 py-4 text-sm text-white placeholder-white/30 focus:outline-none focus:border-[#00C4C8]/40 transition"
             />
 
             <textarea
-              rows="4"
+              rows="5"
               name="message"
               placeholder="Tell me about your project"
               required
-              className="w-full bg-black border border-white/10 rounded-xl px-5 py-4 text-sm text-white placeholder-white/30 focus:outline-none focus:border-white/30 transition resize-none"
+              className="w-full bg-black/60 border border-white/10 rounded-xl px-5 py-4 text-sm text-white placeholder-white/30 focus:outline-none focus:border-[#00C4C8]/40 transition resize-none"
             />
 
             <motion.button
@@ -138,7 +145,7 @@ export default function Contact() {
               whileTap={{ scale: 0.97 }}
               transition={{ duration: 0.15 }}
               type="submit"
-              className="w-full mt-2 py-4 rounded-full bg-[#00C4C8] text-black font-medium hover:opacity-90 transition"
+              className="w-full mt-3 py-4 rounded-full bg-[#00C4C8] text-black font-medium hover:opacity-90 transition"
             >
               {status === "sending"
                 ? "Sending..."
