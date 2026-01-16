@@ -48,9 +48,10 @@ export default function Contact() {
 
   return (
     <section
-      id="contact"
-      className="relative min-h-screen flex items-center px-6 bg-black overflow-hidden scroll-mt-28"
-    >
+  id="contact"
+  className="relative min-h-screen flex items-start px-4 sm:px-6 bg-black overflow-hidden pt-28 sm:pt-32 scroll-mt-28"
+>
+
       {/* Ambient cinematic glow */}
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[900px] rounded-full bg-[#00C4C8]/10 blur-[200px]" />
