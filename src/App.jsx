@@ -6,6 +6,7 @@ import Footer from "./components/Footer";
 import Hero from "./sections/Hero";
 import Services from "./components/Services";
 import CaseStudies from "./sections/CaseStudies";
+import Team from "./sections/Team";
 import CTA from "./sections/CTA";
 
 import ContactPage from "./pages/ContactPage";
@@ -25,6 +26,7 @@ export default function App() {
                 <Hero />
                 <Services />
                 <CaseStudies />
+                <Team />
                 <CTA />
               </>
             }

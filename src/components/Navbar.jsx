@@ -15,9 +15,12 @@ export default function Navbar() {
     <a
       href={href}
       onClick={() => setOpen(false)}
-      className="text-white/80 hover:text-white transition text-lg"
+      className="relative text-white/80 hover:text-white transition text-lg group w-fit"
     >
       {children}
+
+      {/* Animated underline */}
+      <span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-[#00C4C8] transition-all duration-300 group-hover:w-full" />
     </a>
   );
 
@@ -35,6 +38,7 @@ export default function Navbar() {
         }`}
       >
         <div className="max-w-7xl mx-auto w-full px-4 sm:px-6 py-4 flex items-center justify-between">
+          
           {/* LOGO */}
           <a href="/" className="text-2xl font-bold text-white">
             Front<span className="text-[#00C4C8]">IX</span>
@@ -42,12 +46,10 @@ export default function Navbar() {
 
           {/* DESKTOP NAV */}
           <div className="hidden md:flex items-center gap-10">
-            <a href="#services" className="text-white/70 hover:text-white">
-              Services
-            </a>
-            <a href="#work" className="text-white/70 hover:text-white">
-              About
-            </a>
+            <NavLink href="#services">Services</NavLink>
+            <NavLink href="#work">Work</NavLink>
+            <NavLink href="#team">Team</NavLink>
+
             <a
               href="#cta"
               className="px-6 py-2 rounded-xl bg-[#00C4C8] text-black font-semibold"
@@ -92,7 +94,9 @@ export default function Navbar() {
             >
               <div className="flex flex-col gap-6 px-6 py-8">
                 <NavLink href="#services">Services</NavLink>
-                <NavLink href="#work">About</NavLink>
+                <NavLink href="#work">Work</NavLink>
+                <NavLink href="#team">Team</NavLink>
+
                 <NavLink href="#cta">
                   <span className="inline-block px-6 py-3 rounded-xl bg-[#00C4C8] text-black font-semibold">
                     Contact

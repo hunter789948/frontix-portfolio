@@ -27,7 +27,7 @@ export default function Hero() {
           className="font-heading font-extrabold leading-tight 
                      text-4xl sm:text-5xl md:text-6xl lg:text-7xl"
         >
-          I build{" "}
+          We build{" "}
           <span className="text-[#00C4C8] inline-block min-w-[12ch]">
             <TextType
               text={["premium", "high-converting", "modern", "animated"]}
@@ -39,9 +39,10 @@ export default function Hero() {
             />
           </span>
           <br />
-          frontend websites
+          digital experiences
           <br />
           that convert.
+
         </motion.h1>
 
         {/* Sub text */}
@@ -51,8 +52,8 @@ export default function Hero() {
           transition={{ delay: 0.4, duration: 0.9 }}
           className="mt-6 max-w-xl text-sm sm:text-base md:text-lg text-gray-300 font-body leading-relaxed"
         >
-          Modern, animated, high-performance websites built with React,
-          Tailwind, and cinematic UI motion.
+          Premium websites, intelligent Excel systems, and high-impact presentations designed to help modern businesses grow.
+
         </motion.p>
 
         {/* CTA */}

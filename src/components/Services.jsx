@@ -3,30 +3,31 @@ import ServiceCard from "./ServiceCard";
 
 const services = [
   {
-    title: "Frontend Development",
-    desc: "High-performance React and Tailwind interfaces built for speed, clarity, and scale."
+    title: "Web Design & Frontend Development",
+    desc: "Premium websites built with React, modern UI, smooth animations, and conversion-focused structure."
   },
   {
-    title: "Landing Pages",
-    desc: "Conversion-focused landing pages for startups, creators, and agencies."
+    title: "Excel Dashboards & Automation",
+    desc: "Advanced Excel systems, dashboards, trackers, and automated reports for smarter business decisions."
   },
   {
-    title: "Figma to React",
-    desc: "Pixel-perfect Figma designs transformed into clean, responsive React code."
+    title: "PowerPoint & Pitch Deck Design",
+    desc: "High-impact presentations for startups, founders, agencies, and corporate teams."
   },
   {
-    title: "Dashboards & UI Systems",
-    desc: "Modern dashboards, admin panels, and reusable component libraries."
+    title: "UI Systems & Design Consistency",
+    desc: "Reusable design systems that keep your product visually strong and scalable."
   },
   {
-    title: "Performance & UX Audits",
-    desc: "Speed, accessibility, and UX improvements for existing websites."
+    title: "Performance & UX Optimization",
+    desc: "Speed, clarity, accessibility, and UX improvements for existing products."
   },
   {
-    title: "Maintenance Retainers",
-    desc: "Ongoing updates, fixes, and long-term frontend support."
+    title: "Ongoing Support & Retainers",
+    desc: "Long-term technical and design support for growing teams and businesses."
   }
 ];
+
 
 /* Parent container controls scroll reveal */
 const containerVariants = {
@@ -75,7 +76,7 @@ export default function Services() {
         {/* Heading */}
         <motion.h2
           variants={scrollReveal}
-          className="text-4xl md:text-5xl font-serif text-white mb-6"
+          className="text-4xl md:text-5xl font-serif text-[#00C4C8] mb-6"
         >
           Services
         </motion.h2>
@@ -85,7 +86,8 @@ export default function Services() {
           variants={scrollReveal}
           className="text-gray-400 max-w-2xl mb-20"
         >
-          I help startups and agencies build premium, high-performance frontend experiences.
+         I help startups and businesses with premium websites, intelligent Excel systems, and high-impact presentations.
+
         </motion.p>
 
         {/* Service Cards */}

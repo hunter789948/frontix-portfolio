@@ -15,7 +15,7 @@ const socials = [
   },
   {
     name: "Instagram",
-    href: "https://www.instagram.com/_ig_obito_789?igsh=MWd2ZnN6aXJ6aDI5dA%3D%3D&utm_source=qr",
+    href: "https://www.instagram.com/frontix.web?igsh=NmVoeHY4MXI3M2pw",
     icon: <FaInstagram />,
     hover: "hover:text-[#E4405F] hover:border-[#E4405F]/40",
   },
