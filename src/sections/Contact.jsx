@@ -53,10 +53,12 @@ export default function Contact() {
     >
       {/* Ambient glow */}
       <div className="pointer-events-none absolute inset-0">
-        <div className="absolute top-1/2 left-1/2 
-                        -translate-x-1/2 -translate-y-1/2 
-                        w-[900px] h-[900px] rounded-full 
-                        bg-[#00C4C8]/10 blur-[200px]" />
+        <div
+          className="absolute top-1/2 left-1/2 
+          -translate-x-1/2 -translate-y-1/2 
+          w-[900px] h-[900px] rounded-full 
+          bg-[#00C4C8]/10 blur-[200px]"
+        />
       </div>
 
       <motion.div
@@ -88,10 +90,10 @@ export default function Contact() {
               <p>
                 <span className="text-white/30">Email:</span>{" "}
                 <a
-                  href="mailto:smondal14168@gmail.com"
+                  href="mailto:frontix321@gmail.com"
                   className="hover:text-[#00C4C8] transition"
                 >
-                  frontix@gmail.com
+                  frontix321@gmail.com
                 </a>
               </p>
             </div>
@@ -102,12 +104,14 @@ export default function Contact() {
         <motion.div
           variants={reveal}
           className="relative bg-white/[0.035] border border-white/10 
-                     rounded-3xl p-10 md:p-12 backdrop-blur-xl 
-                     shadow-[0_0_80px_rgba(0,196,200,0.08)] 
-                     min-h-[540px] flex flex-col justify-center"
+          rounded-3xl p-10 md:p-12 backdrop-blur-xl 
+          shadow-[0_0_80px_rgba(0,196,200,0.08)] 
+          min-h-[540px] flex flex-col justify-center"
         >
-          <div className="pointer-events-none absolute inset-0 rounded-3xl 
-                          bg-gradient-to-b from-white/[0.05] to-transparent" />
+          <div
+            className="pointer-events-none absolute inset-0 rounded-3xl 
+            bg-gradient-to-b from-white/[0.05] to-transparent"
+          />
 
           <form
             ref={formRef}
@@ -120,8 +124,8 @@ export default function Contact() {
               placeholder="Your name"
               required
               className="w-full bg-black/60 border border-white/10 rounded-xl 
-                         px-5 py-4 text-sm text-white placeholder-white/30 
-                         focus:outline-none focus:border-[#00C4C8]/40 transition"
+              px-5 py-4 text-sm text-white placeholder-white/30 
+              focus:outline-none focus:border-[#00C4C8]/40 transition"
             />
 
             <input
@@ -130,17 +134,45 @@ export default function Contact() {
               placeholder="Your email"
               required
               className="w-full bg-black/60 border border-white/10 rounded-xl 
-                         px-5 py-4 text-sm text-white placeholder-white/30 
-                         focus:outline-none focus:border-[#00C4C8]/40 transition"
+              px-5 py-4 text-sm text-white placeholder-white/30 
+              focus:outline-none focus:border-[#00C4C8]/40 transition"
             />
+
+            {/* NEW PROJECT TYPE FIELD */}
+            <select
+              name="project_type"
+              required
+              className="w-full bg-black/60 border border-white/10 rounded-xl 
+              px-5 py-4 text-sm text-white 
+              focus:outline-none focus:border-[#00C4C8]/40 transition"
+            >
+              <option value="" className="bg-black text-white">
+                Select project type
+              </option>
+              <option value="Frontend Website" className="bg-black text-white">
+                Frontend Website
+              </option>
+              <option value="Excel Dashboard" className="bg-black text-white">
+                Excel Dashboard / Datasheet
+              </option>
+              <option value="PowerPoint Design" className="bg-black text-white">
+                PowerPoint / Pitch Deck
+              </option>
+              <option value="Full Package" className="bg-black text-white">
+                Full Digital Package
+              </option>
+              <option value="Not sure" className="bg-black text-white">
+                Not sure yet
+              </option>
+            </select>
 
             <input
               type="tel"
               name="phone"
               placeholder="Your contact number"
               className="w-full bg-black/60 border border-white/10 rounded-xl 
-                         px-5 py-4 text-sm text-white placeholder-white/30 
-                         focus:outline-none focus:border-[#00C4C8]/40 transition"
+              px-5 py-4 text-sm text-white placeholder-white/30 
+              focus:outline-none focus:border-[#00C4C8]/40 transition"
             />
 
             <textarea
@@ -149,8 +181,8 @@ export default function Contact() {
               placeholder="Tell us about your project"
               required
               className="w-full bg-black/60 border border-white/10 rounded-xl 
-                         px-5 py-4 text-sm text-white placeholder-white/30 
-                         focus:outline-none focus:border-[#00C4C8]/40 transition resize-none"
+              px-5 py-4 text-sm text-white placeholder-white/30 
+              focus:outline-none focus:border-[#00C4C8]/40 transition resize-none"
             />
 
             <motion.button
@@ -159,7 +191,7 @@ export default function Contact() {
               transition={{ duration: 0.15 }}
               type="submit"
               className="w-full mt-3 py-4 rounded-full bg-[#00C4C8] 
-                         text-black font-medium hover:opacity-90 transition"
+              text-black font-medium hover:opacity-90 transition"
             >
               {status === "sending"
                 ? "Sending..."
