@@ -64,7 +64,7 @@ export default function Hero() {
           className="mt-10 flex flex-col sm:flex-row gap-4 sm:gap-6 font-body"
         >
           <a
-            href="#contact"
+            href="#cta"
             className="relative px-7 py-4 rounded-xl bg-[#00C4C8] text-black font-semibold overflow-hidden group text-center"
           >
             <span className="relative z-10">Let’s Work</span>

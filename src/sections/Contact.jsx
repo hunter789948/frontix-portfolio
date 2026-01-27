@@ -91,7 +91,7 @@ export default function Contact() {
                   href="mailto:smondal14168@gmail.com"
                   className="hover:text-[#00C4C8] transition"
                 >
-                  smondal14168@gmail.com
+                  frontix@gmail.com
                 </a>
               </p>
             </div>

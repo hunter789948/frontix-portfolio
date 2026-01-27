@@ -9,7 +9,7 @@ import {
 const socials = [
   {
     name: "Facebook",
-    href: "https://www.facebook.com/share/1Gx2vomnfm/?mibextid=wwXIfr",
+    href: "https://www.facebook.com/profile.php?id=61586868403660",
     icon: <FaFacebookF />,
     hover: "hover:text-[#1877F2] hover:border-[#1877F2]/40",
   },
